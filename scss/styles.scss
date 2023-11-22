@@ -1,0 +1,335 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin middle() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin button() {
+    width: 188px;
+    height: 76px;
+    border-radius: 20px;
+    background: #99BAED;
+    border: #FFF;
+    color: #FFF;
+    font-family: 'Catamaran', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 150.6%;
+    letter-spacing: 0.6px;
+
+    &:hover {
+        background-color: #cdd7e4
+    }
+}
+
+@mixin paragraph($color , $fontfamily, $fsize, $fweight, $lineheight) {
+    color: $color;
+    font-family: $font;
+    font-size: $fsize;
+    font-weight: $fweight;
+    line-height: $lineheight ;
+}
+
+nav {
+    @include middle();
+    width: 100vw;
+
+    .navbar {
+        max-width: 1300px;
+        width: 100%;
+        @include middle();
+        justify-content: space-between;
+
+        .nav__list {
+            @include middle();
+            justify-content: space-between;
+            width: 60%;
+
+            .nav__logo {
+                @include middle();
+                align-items: end;
+                position: relative;
+
+                &>p {
+                    @include paragraph(#99BAED, 'Catamaran', sans-serif, 40px, 600, 133.6%);
+                    position: absolute;
+                }
+            }
+
+            .nav__items {
+                gap: 0 30px;
+                max-width: 500px;
+                list-style: none;
+                @include middle();
+
+                .nav__item>a {
+                    text-decoration: none;
+                    color: #163561;
+                    font-family: 'Catamaran', sans-serif;
+                    font-size: 25px;
+                    font-weight: 500;
+                    line-height: 133.6%;
+
+                    &:hover {
+                        color: #d69f13;
+                    }
+                }
+            }
+        }
+
+        .nav__icons {
+            @include middle();
+            justify-content: space-between;
+            gap: 40px;
+            width: 100%;
+            max-width: 25%;
+            height: 90px;
+
+            &>img:hover {
+                cursor: pointer;
+            }
+
+            &>button {
+                @include button();
+            }
+        }
+    }
+}
+
+.hairstyle {
+    width: 100vw;
+    height: 850px;
+    margin-bottom: 100px;
+    @include middle();
+
+    .hairstyle__section {
+        width: 1300px;
+        height: 100%;
+        @include middle();
+
+        .title {
+            @include middle();
+            flex-direction: column;
+            align-items: flex-start;
+            max-width: 600px;
+            height: 100%;
+            gap: 20px;
+
+            &>span:first-child {
+                @include paragraph(#FBB400, Catamaran, 75px, 700, 133.6%);
+            }
+
+            &>span:nth-of-type(2) {
+                @include paragraph(#163561, Catamaran, 75px, 700, 133.6%);
+            }
+
+            &>p {
+                @include paragraph(#153461, Catamaran, 25px, 400, 150.6%);
+                letter-spacing: 0.75px;
+                opacity: 0.65;
+            }
+
+            &>button {
+                @include button();
+            }
+        }
+    }
+}
+
+.Provide {
+    width: 100vw;
+    margin-bottom: 100px;
+    @include middle();
+
+    .provide__section {
+        width: 1300px;
+        @include middle();
+        flex-direction: column;
+
+        .provide__title {
+            width: 100%;
+            height: 20%;
+            @include middle();
+            flex-direction: column;
+
+            &>p:first-child {
+                @include paragraph(#163561, Catamaran, 70px, 700, 116.6%);
+                text-align: center;
+                letter-spacing: 2.1px;
+            }
+
+            &>p:last-child {
+                @include paragraph(#FBB400, Catamaran, 70px, 700, 116.6%);
+                letter-spacing: 2.1px;
+            }
+        }
+
+        .provide_cards {
+            gap: 40px;
+            width: 100%;
+            @include middle();
+
+            .provide_card {
+                margin-top: 10px;
+                max-width: 440px;
+                border-radius: 29px;
+                background: #FAFBFF;
+                box-shadow: 0px 5px 0px 0px #99BAED;
+                @include middle();
+                flex-direction: column;
+                gap: 20px;
+
+                .mini_card {
+                    margin-top: 50px;
+                    width: 103px;
+                    height: 126px;
+                    border-radius: 13px;
+                    background: #E5ECFE;
+                    box-shadow: 0px 1px 0px 0px #008FDD;
+                    @include middle();
+                    flex-direction: column;
+                }
+
+                &>h1 {
+                    @include paragraph(#FFF, Catamaran, 45px, 700, 116.6%);
+                    text-align: center;
+                    letter-spacing: 1.35px;
+                }
+
+                &>p {
+                    @include paragraph(none, Catamaran, 25px, 400, 150.6%);
+                    text-align: center;
+                    letter-spacing: 0.75px;
+                    opacity: 0.65;
+                    margin: 40px;
+                }
+            }
+        }
+    }
+}
+
+.gallery {
+    width: 100vw;
+    margin-bottom: 100px;
+    @include middle();
+
+    .gallery_section {
+        width: 1400px;
+        flex-direction: column;
+
+        .galery_title {
+            width: 100%;
+            height: 10%;
+            gap: 20px;
+            margin-bottom: 50px;
+            @include middle();
+
+            &>span:first-child {
+                @include paragraph(#FBB400, Catamaran, 75px, 700, 133.6%)
+            }
+
+            &>span:nth-of-type(2) {
+                @include paragraph(#163561, Catamaran, 75px, 700, 133.6%)
+            }
+
+        }
+
+        .galery_pictures {
+            gap: 40px;
+            width: 100%;
+            height: 60%;
+            @include middle();
+            flex-wrap: wrap;
+
+            .galery_picture {
+                position: relative;
+
+                &>img {
+                    filter: drop-shadow(8px 8px 10px rgb(50, 79, 211));
+                    opacity: 0.8;
+                    border-radius: 10px;
+                }
+            }
+        }
+
+        .galery_btn {
+            width: 100%;
+            height: 10%;
+            margin-top: 60px;
+            @include middle();
+
+            &>button {
+                @include button();
+            }
+        }
+    }
+}
+
+.footer {
+    width: 100vw;
+    height: 600px;
+    @include middle();
+
+    .footer_section {
+        width: 1400px;
+        height: 550px;
+        @include middle();
+        flex-direction: column;
+        gap: 30px;
+
+        .footer_scissor {
+            @include middle();
+            width: 100%;
+            height: 160px;
+
+            &>img {
+                position: relative;
+            }
+
+            &>p {
+                @include paragraph( #163561, Catamaran,60px ,600 ,133.6% );
+                margin-left: 190px;
+                margin-top: 80px;
+                position: absolute;
+            }
+        }
+
+        .footer_paragraph {
+            width: 50%;
+            height: 120px;
+
+            &>p {
+                @include paragraph( #153461, Catamaran,25px ,400 ,150.6% );
+                opacity: 0.65;
+                text-align: center;
+                letter-spacing: 0.75px;
+            }
+        }
+
+        .footer_icons {
+            width: 100%;
+            height: 120px;
+            @include middle();
+            gap: 20px;
+
+            .footer_icon {
+                border-radius: 50%;
+                @include middle();
+                width: 70px;
+                height: 70px;
+                background-color: #D3E5FF;
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: #2062c5;
+                }
+            }
+        }
+    }
+}
